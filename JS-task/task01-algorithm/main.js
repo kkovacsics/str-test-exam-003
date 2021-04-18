@@ -10,8 +10,15 @@ const customerList = [{ "id": 1, "name": "Janeva Ciccone", "email": "jciccone0@i
 { "id": 10, "name": "Lin Surmon", "email": "lsurmon9@myspace.com", "rating": 3, "address": "4949 Memorial Way" }
 ];
 
+/**
+ * azoknak a customer -eknek a nevét (CSAK A NEVÉT) kell visszaadnia egy tömbben, 
+ * amelyek name tulajdonságában szerepel a kapott szövegrészlet és 
+ * rating -juk LEGALÁBB annyi mint a kapott rating.
+ */
 const customerFilter = (list, name, rating) => {
-    return null;
+    return list
+            .filter(item => item.name.includes(name) && item.rating>=rating)
+            .map(item => item.name);
 };
 
 if (typeof module !== 'undefined') {
